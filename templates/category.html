@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}{{ section.title }} - {{ config.title }}{% endblock title %}
+
+{% block content %}
+<section class="container mx-auto px-6 py-20">
+    <h1 class="text-4xl font-light mb-4 text-center">{{ section.title }}</h1>
+    
+    {% if section.extra.description %}
+    <p class="text-center text-gray-600 mb-16 max-w-2xl mx-auto">{{ section.extra.description }}</p>
+    {% endif %}
+    
+    {% if section.pages %}
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {% for page in section.pages %}
+        <a href="{{ page.permalink }}" class="group block">
+            <div class="aspect-[3/4] bg-gray-100 mb-4 overflow-hidden">
+                {% if page.extra.image %}
+                <img src="{{ page.extra.image }}" 
+                     alt="{{ page.title }}" 
+                     class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                {% else %}
+                <div class="w-full h-full flex items-center justify-center text-gray-400">
+                    [Imagen próximamente]
+                </div>
+                {% endif %}
+            </div>
+            <h3 class="text-lg font-light mb-1">{{ page.title }}</h3>
+            {% if page.extra.year %}
+            <p class="text-sm text-gray-600">{{ page.extra.year }}</p>
+            {% endif %}
+        </a>
+        {% endfor %}
+    </div>
+    {% else %}
+    <div class="text-center py-20">
+        <p class="text-gray-500">Próximamente obras en esta sección</p>
+    </div>
+    {% endif %}
+</section>
+{% endblock content %}

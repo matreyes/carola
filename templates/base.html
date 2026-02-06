@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{{ config.title }}{% endblock title %}</title>
+    <link rel="stylesheet" href="{{ get_url(path='style.css') }}">
+</head>
+<body class="bg-white text-gray-900 font-sans antialiased">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-200">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="{{ get_url(path='/') }}" class="text-xl font-light tracking-wide hover:text-gray-600 transition">
+                    {{ config.title }}
+                </a>
+                <div class="flex gap-8 text-sm">
+                    <a href="{{ get_url(path='/grabados') }}" class="hover:text-gray-600 transition">Grabados</a>
+                    <a href="{{ get_url(path='/pinturas') }}" class="hover:text-gray-600 transition">Pinturas</a>
+                    <a href="{{ get_url(path='/instalaciones') }}" class="hover:text-gray-600 transition">Instalaciones</a>
+                    <a href="{{ get_url(path='/biografia') }}" class="hover:text-gray-600 transition">Biografía</a>
+                    <a href="{{ get_url(path='/contacto') }}" class="hover:text-gray-600 transition">Contacto</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="pt-20">
+        {% block content %}{% endblock content %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-200 mt-20 py-8">
+        <div class="container mx-auto px-6 text-center text-sm text-gray-600">
+            <p>&copy; {{ now() | date(format="%Y") }} {{ config.title }}. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>

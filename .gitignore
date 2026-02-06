@@ -1,0 +1,24 @@
+# Zola build output
+public/
+
+# Logs
+zola.log
+*.log
+
+# Node modules & packages
+node_modules/
+package-lock.json
+
+# Build artifacts
+static/style.css
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
