@@ -13,10 +13,6 @@ build_search_index = false
 # Whether to generate a feed file at the root of the site
 generate_feeds = false
 
-[markdown]
-# Whether to do syntax highlighting
-[markdown.highlighting]
-highlight_code = false
 
 [extra]
 # Artist info
