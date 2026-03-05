@@ -1,6 +1,9 @@
 # Zola build output
 public/
 
+# Zola binary (downloaded at build time)
+zola
+
 # Logs
 zola.log
 *.log
