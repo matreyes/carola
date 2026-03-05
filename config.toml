@@ -15,7 +15,7 @@ generate_feeds = false
 
 [markdown]
 # Whether to do syntax highlighting
-highlight_code = false
+highlighting = false
 
 [extra]
 # Artist info
